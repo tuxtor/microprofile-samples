@@ -1,0 +1,39 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="demo-jsonp:war exploded">
+    <output-path>$PROJECT_DIR$/target/demo-jsonp</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>demo-jsonp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="demo-jsonp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: io.jaegertracing:jaeger-client:0.34.0" />
+          <element id="library" level="project" name="Maven: io.jaegertracing:jaeger-thrift:0.34.0" />
+          <element id="library" level="project" name="Maven: org.apache.thrift:libthrift:0.12.0" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.9.0" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
+          <element id="library" level="project" name="Maven: io.jaegertracing:jaeger-core:0.34.0" />
+          <element id="library" level="project" name="Maven: io.opentracing:opentracing-api:0.31.0" />
+          <element id="library" level="project" name="Maven: io.opentracing:opentracing-util:0.31.0" />
+          <element id="library" level="project" name="Maven: io.opentracing:opentracing-noop:0.31.0" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
+          <element id="library" level="project" name="Maven: io.jaegertracing:jaeger-tracerresolver:0.34.0" />
+          <element id="library" level="project" name="Maven: io.opentracing.contrib:opentracing-tracerresolver:0.1.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.25" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/demo-jsonp/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="demo-jsonp/web/Web" />
+    </root>
+  </artifact>
+</component>

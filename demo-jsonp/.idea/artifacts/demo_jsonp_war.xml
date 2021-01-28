@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="demo-jsonp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>demo-jsonp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="demo-jsonp.war">
+      <element id="artifact" artifact-name="demo-jsonp:war exploded" />
+    </root>
+  </artifact>
+</component>

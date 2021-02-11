@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-rest-client
+  labels:
+    app: demo-rest-client
+spec:
+  type: LoadBalancer
+  selector:
+    app: demo-rest-client
+  ports:
+    - port: 80
+      targetPort: 8080
+      name: http
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: demo-rest-client
+spec:
+  replicas: 99
+  selector:
+    matchLabels:
+      app: demo-rest-client
+  template:
+    metadata:
+      labels:
+        app: demo-rest-client
+        version: v1
+    spec:
+      containers:
+        - name: demo-rest-client
+          image: tuxtor/demo-rest-client:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+---

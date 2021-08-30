@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-tracing-client-public
+  labels:
+    app: demo-tracing-client
+spec:
+  type: LoadBalancer
+  selector:
+    app: demo-tracing-client
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-tracing-client
+  labels:
+    app: demo-tracing-client
+spec:
+  type: NodePort
+  selector:
+    app: demo-tracing-client
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: http
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: demo-tracing-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-tracing-client
+  template:
+    metadata:
+      labels:
+        app: demo-tracing-client
+        version: v1
+    spec:
+      containers:
+      - name: demo-tracing-client
+        image: tuxtor/demo-tracing-client
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
